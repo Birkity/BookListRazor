@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <Content Remove="Pages\BookList\BookList.cshtml" />
+    <Content Remove="wwwroot\js\bookList.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\js\bookList.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +26,7 @@
 
   <ItemGroup>
     <None Include="Pages\BookList.cshtml" />
+    <None Include="wwwroot\js\bookList.js" />
   </ItemGroup>
 
   <ItemGroup>

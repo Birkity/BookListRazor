@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookListRazor.Model;
+using Microsoft.AspNetCore.Mvc;
 
-namespace BookListRazor.Controller
+namespace BookListRazor.Controllers
 {
+    [Route("api/Book")]
+    [ApiController]
     public class BookController : Controller
     {
-        public IActionResult Index()
+        private readonly ApplicationDbContext _db;
+        public BookController(ApplicationDbContext db)
         {
-            return View();
+            _db=db;
         }
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Json(new { data = _db.Book.ToList() });
+        }
+
     }
 }
